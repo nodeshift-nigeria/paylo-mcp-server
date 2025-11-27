@@ -39,10 +39,6 @@ graph LR
 
 ## 🛠️ Integration
 
-### Prerequisites
-- Node.js v18+
-- A Paylo/Supabase Database URL & Anon Key
-
 ### Quick Start for Claude Desktop
 
 To give your local Claude Desktop app access to Paylo:
