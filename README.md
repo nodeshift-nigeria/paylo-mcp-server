@@ -55,25 +55,14 @@ To give your local Claude Desktop app access to Paylo:
    npm run build
    ```
 
-2. **Configure Environment**
-   Create a `.env` file with your credentials:
-   ```env
-   SUPABASE_URL=your_supabase_url
-   SUPABASE_ANON_KEY=your_anon_key
-   ```
-
-3. **Add to Claude Config**
+2. **Add to Claude Config**
    Edit your `claude_desktop_config.json`:
    ```json
    {
      "mcpServers": {
        "paylo": {
          "command": "node",
-         "args": ["/absolute/path/to/paylo-mcp-server/build/index.js"],
-         "env": {
-           "SUPABASE_URL": "...",
-           "SUPABASE_ANON_KEY": "..."
-         }
+         "args": ["/absolute/path/to/paylo-mcp-server/build/index.js"]
        }
      }
    }
