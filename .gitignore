@@ -49,3 +49,4 @@ yarn-error.log*
 # Private Plans
 X402_IMPLEMENTATION_PLAN.md
 technical-planning/
+scripts/test-backend-connection.ts
