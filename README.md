@@ -64,6 +64,31 @@ To give your local Claude Desktop app access to Paylo:
    }
    ```
 
+### 🐳 Docker Quick Start
+
+You can also run the server directly from the published Docker image without installing Node.js:
+
+```bash
+docker run -i --rm ghcr.io/nodeshift-nigeria/paylo-mcp-server:latest
+```
+
+Add to `claude_desktop_config.json`:
+```json
+{
+  "mcpServers": {
+    "paylo": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "ghcr.io/nodeshift-nigeria/paylo-mcp-server:latest"
+      ]
+    }
+  }
+}
+```
+
 ## 📦 Available Tools
 
 When integrated, the following tools become available to the AI:
