@@ -2,6 +2,7 @@ import { supabase } from './supabase.js';
 
 export class ProductService {
   static async searchProducts(query: string, limit: number = 20, merchantId?: string, category?: string) {
+    const safeLimit = Math.min(limit, 100); // Cap limit to prevent scraping
     // Basic text search on name and description
     let dbQuery = supabase
       .from('products')
@@ -20,7 +21,7 @@ export class ProductService {
       `)
       .eq('is_available', true)
       .ilike('name', `%${query}%`)
-      .limit(limit);
+      .limit(safeLimit);
 
     if (merchantId) {
       dbQuery = dbQuery.eq('storefront_id', merchantId);

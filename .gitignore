@@ -50,3 +50,4 @@ yarn-error.log*
 X402_IMPLEMENTATION_PLAN.md
 technical-planning/
 scripts/test-backend-connection.ts
+scripts/malicious_test.ts
