@@ -1,0 +1,77 @@
+[
+  {
+    "name": "list_merchants",
+    "description": "Lists available Paylo storefronts with metadata.",
+    "arguments": []
+  },
+  {
+    "name": "search_products",
+    "description": "Searches for products across all merchants or within a specific store.",
+    "arguments": [
+      {
+        "name": "query",
+        "type": "string",
+        "desc": "The search term (e.g., 'iphone case', 'sneakers')"
+      },
+      {
+        "name": "merchantId",
+        "type": "string",
+        "desc": "Optional: Filter by a specific merchant ID"
+      }
+    ]
+  },
+  {
+    "name": "get_product_details",
+    "description": "Gets full details (price, description, stock) for a product.",
+    "arguments": [
+      {
+        "name": "productId",
+        "type": "string",
+        "desc": "The ID of the product to retrieve"
+      }
+    ]
+  },
+  {
+    "name": "create_order",
+    "description": "Creates a pending order for a list of items.",
+    "arguments": [
+      {
+        "name": "items",
+        "type": "array",
+        "desc": "List of items to purchase (productId, quantity, variantId)"
+      }
+    ]
+  },
+  {
+    "name": "generate_payment_link",
+    "description": "Generates a checkout URL for a specific order.",
+    "arguments": [
+      {
+        "name": "orderId",
+        "type": "string",
+        "desc": "The ID of the order to pay for"
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "desc": "Customer email address"
+      },
+      {
+        "name": "amountKobo",
+        "type": "number",
+        "desc": "Amount in Kobo (e.g., 500000 for 5000 NGN)"
+      }
+    ]
+  },
+  {
+    "name": "check_payment_status",
+    "description": "Verifies if an order has been paid.",
+    "arguments": [
+      {
+        "name": "reference",
+        "type": "string",
+        "desc": "The payment reference code"
+      }
+    ]
+  }
+]
